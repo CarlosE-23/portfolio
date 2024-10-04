@@ -1,0 +1,21 @@
+:root {
+  --background-color: #f5f5f5;
+
+  /* icon properties */
+  --icon-weight: 900;
+  --icon-size: 24px;
+  --icon-color: #333;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Font Awesome 6 Free";
+}
+
+body {
+  background-color: var(--background-color);
+}
