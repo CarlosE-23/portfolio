@@ -1,7 +1,11 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.classes = void 0;
 const classes = {
-    showHeader: "showHeader",
+  showRoot: "show-root",
+  showMain: "show-main",
+  showItem: "show-item",
+  hiddenItem: "hidden-item",
+  hideBanner: "hide-banner",
+  nullOpaity: "null-opacity", //zero opacity
+  active: "active",
 };
-exports.classes = classes;
+export { classes };

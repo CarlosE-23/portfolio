@@ -1,10 +1,24 @@
 :root {
-  --background-color: #f5f5f5;
+  --background-color: #f8f7f9;
+  --dark-mode: #111;
+  --main-color: #48bf84;
+  --main-color-2: #48bf8480;
+  --letter-color: #302f2f;
+  --line-color: #11111150;
 
   /* icon properties */
   --icon-weight: 900;
   --icon-size: 24px;
   --icon-color: #333;
+
+  /* size */
+
+  --primary-title-size: 25px;
+  --secondary-title-size: 20px;
+
+  --primary-letter-size: 16px;
+
+  --shadow-color: #111;
 }
 
 *,
@@ -13,9 +27,82 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Font Awesome 6 Free";
+  font-family: "Lato";
+  font-weight: 700;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: var(--background-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* Letter Styles */
+
+[data-primary-title] {
+  color: #000;
+  font-size: var(--primary-title-size);
+}
+
+[data-secondary-title] {
+  color: #000;
+  font-size: var(--secondary-title-size);
+}
+
+[data-primary-letter] {
+  color: var(--letter-color);
+  font-size: var(--primary-letter-size);
+}
+
+.green-shadow {
+  color: var(--main-color);
+  text-shadow: 0 0 0, 0 0 10px var(--main-color);
+}
+
+.null-opacity {
+  opacity: 0;
+}
+
+/* Show item */
+
+.show-item {
+  animation: showItem 1s forwards;
+  opacity: 1;
+}
+
+.hidden-item {
+  animation: hiddenItem 1s forwards;
+  opacity: 1;
+}
+
+@keyframes showItem {
+  0% {
+    opacity: 0;
+    transform: translateY(40%);
+  }
+  70% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes hiddenItem {
+  0% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(40%);
+  }
 }
