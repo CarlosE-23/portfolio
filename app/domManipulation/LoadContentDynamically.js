@@ -12,8 +12,6 @@ projects.forEach((el) =>
   $projectsFragment.appendChild(ProjectCardContainer(el))
 ); //Crear Fragmento con elementos Projects
 
-console.log($projectsFragment);
-
 const loadProjects = () =>
   $elements.projectsContainer.appendChild($projectsFragment); //Funcion que carga los projectos al DOM
 

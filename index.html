@@ -17,21 +17,33 @@
     <link rel="stylesheet" href="./app/assets/styles/app.css" />
   </head>
   <body>
+    <div id="messages-container">
+      <template id="message-template">
+        <div class="message">
+          <p class="message-text"></p>
+          <p class="message-close">x</p>
+        </div>
+      </template>
+    </div>
     <header>
       <h1 id="title">CARLOS <span class="green-shadow">GUANIPA</span></h1>
-      <div class="redes">
-        <div id="mail">
-          <p>carlosguanipa23@gmail.com</p>
-          <img
-            src="./app/assets/icons/icons8-gmail.svg"
-            alt="mail"
-            title="abrir gmail"
-          />
+      <div class="header-redes">
+        <div class="header-mail">
+          <div class="header-mail-container">
+            <p data-secondary-letter>carlosguanipa23@gmail.com</p>
+          </div>
+          <a href="#" class="open-gmail">
+            <img
+              src="./app/assets/icons/icons8-gmail.png"
+              alt="mail"
+              title="Mandar Correo"
+            />
+          </a>
           <img
             src="./app/assets/icons/icon-copy.svg"
             alt="copiar"
-            title="copiar"
-            class="copy"
+            title="Copiar"
+            class="copy-mail"
           />
         </div>
         <a
@@ -43,229 +55,307 @@
           <img src="./app/assets/icons/icons8-github.svg" alt="github" />
         </a>
       </div>
+      <div class="menu-btn open" data-show>
+        <img
+          class="open-menu"
+          src="./app/assets/icons/icons8-menú.svg"
+          alt="Abrir Menú"
+        />
+        <img
+          class="close-menu"
+          src="./app/assets/icons/icons8-close.svg"
+          alt="Cerrar Menú"
+        />
+      </div>
     </header>
     <div class="banner-container">
       <div class="banner">
-        <div class="data">
-          <h2>Developer <span class="green-shadow">-</span> Front end</h2>
-          <p>
-            Preparado para crear interfaces web atractivas y funcionales.
-            Transformo ideas en experiencias digitales.
-          </p>
+        <div class="data-container">
+          <div class="data">
+            <h2>Front end <span class="green-shadow">-</span> Developer</h2>
+            <p>
+              Preparado para crear interfaces web atractivas y funcionales.
+              Transformo ideas en experiencias digitales.
+            </p>
+          </div>
         </div>
         <div class="face">
-          <img src="./app/assets/images/yo.jpeg" alt="Cara" class="face-img" />
+          <img
+            src="./app/assets/images/my-face.jpg"
+            alt="Cara"
+            class="face-img"
+          />
         </div>
       </div>
       <button id="start-btn">Iniciar</button>
     </div>
-    <div class="main-container overflow-hidden">
+    <div class="aplication-main">
       <aside id="sidebar">
         <img
-          src="./app/assets/images/yo.jpeg"
+          src="./app/assets/images/my-face.jpg"
           alt="Cara"
           class="face-img"
           data-show
         />
         <nav id="nav">
-          <a href="#about-me" data-show data-primary-letter>Sobre mí</a>
-          <a href="#projects" data-show data-primary-letter>Proyectos</a>
-          <a href="#technical-skills" data-show data-primary-letter
-            >Habilidades técnicas</a
+          <a href="#about-me" data-show data-secondary-title>Sobre Mí</a>
+          <a href="#projects" data-show data-secondary-title>Proyectos</a>
+          <a href="#technical-skills" data-show data-secondary-title
+            >Habilidades Técnicas</a
           >
-          <a href="#experiences" data-show data-primary-letter>Experiencias</a>
-          <a href="#training" data-show data-primary-letter>Formación</a>
+          <a href="#experiences" data-show data-secondary-title>Experiencias</a>
+          <a href="#contact-area" data-show data-secondary-title
+            >Área De Contacto</a
+          >
         </nav>
       </aside>
-      <main>
-        <section id="about-me" data-show>
-          <h2 data-primary-title>Sobre mí</h2>
-          <p data-primary-letter class="section-content">
-            Soy un programador front-end autodidacta y entusiasta, apasionado
-            por crear experiencias web intuitivas y atractivas. Tengo una sólida
-            base en HTML y CSS, junto con dominio en JavaScript y React. Estoy
-            listo para trabajar y contribuir a proyectos innovadores.
-          </p>
-        </section>
-        <section id="projects" data-show>
-          <h2 data-primary-title>Proyectos</h2>
-          <div class="projects-container">
-            <template id="project-card">
-              <article class="project">
-                <div class="img-container"><img src="" alt="" /></div>
-                <div class="project-content">
-                  <h3 class="name"></h3>
-                  <p data-primary-letter class="description"></p>
-                  <div class="technologies"></div>
-                  <a href="" target="_blank" class="github"
-                    ><button>
+      <div class="main-container">
+        <main>
+          <section id="about-me" data-show>
+            <h2 data-primary-title>Sobre mí</h2>
+            <p data-primary-letter class="section-content">
+              Soy un programador front-end autodidacta y entusiasta, apasionado
+              por crear experiencias web intuitivas y atractivas. Tengo una
+              sólida base en HTML y CSS, junto con dominio en JavaScript y
+              React. Estoy listo para trabajar y contribuir a proyectos
+              innovadores.
+            </p>
+          </section>
+          <section id="projects" data-show>
+            <h2 data-primary-title>Proyectos</h2>
+            <div class="projects-container">
+              <template id="project-card">
+                <article class="project">
+                  <div class="img-container"><img src="" alt="" /></div>
+                  <div class="project-content">
+                    <h3 class="name" data-tertiary-title></h3>
+                    <p data-secondary-letter class="description"></p>
+                    <div class="technologies"></div>
+                    <a href="" target="_blank" class="github"
+                      ><button>
+                        <img
+                          src="./app/assets/icons/icons8-github-60.svg"
+                          alt="github icon"
+                        />
+                        <p data-secondary-letter>Ver en Github</p>
+                      </button></a
+                    >
+                  </div>
+                </article>
+              </template>
+            </div>
+          </section>
+          <section id="technical-skills" data-show data-acordeon>
+            <h2 data-primary-title>Habilidades técnicas</h2>
+            <div class="skills section-content">
+              <article class="technologies">
+                <h3 data-secondary-title>Tecnologías</h3>
+                <div class="acordeon-container">
+                  <div class="acordeon">
+                    <div data-primary-letter>
+                      <img src="./app/assets/icons/icon-html.svg" alt="html" />
+                      HTML
+                    </div>
+                    <p data-secondary-letter>
+                      Tengo un sólido entendimiento de HTML, lo que me permite
+                      estructurar eficazmente las páginas web.
+                    </p>
+                  </div>
+                  <div class="acordeon">
+                    <div data-primary-letter>
+                      <img src="./app/assets/icons/icon-css.svg" alt="css" />
+                      CSS
+                    </div>
+                    <p>
+                      Tengo una buena base en CSS, lo que me permite crear
+                      estilos atractivos y responsivos.
+                    </p>
+                  </div>
+                  <div class="acordeon">
+                    <div data-primary-letter>
                       <img
-                        src="./app/assets/icons/icons8-github-60.svg"
-                        alt="github icon"
+                        src="./app/assets/icons/icon-javascript.svg"
+                        alt="JavaScript"
                       />
-                      <p>Ver en Github</p>
-                    </button></a
-                  >
+                      JavaScript
+                    </div>
+                    <p>
+                      Tengo un dominio intermedio en JavaScript y estoy
+                      apasionado por usarlo para crear interactividad en
+                      aplicaciones web.
+                    </p>
+                  </div>
+                  <div class="acordeon">
+                    <div data-primary-letter>
+                      <img
+                        src="./app/assets/icons/icons8-typeScript.svg"
+                        alt="TypeScript"
+                      />
+                      TypeScript
+                    </div>
+                    <p>
+                      Tengo un fuerte entusiasmo por TypeScript, apreciando su
+                      tipado estático y la organización que aporta a mi código.
+                      Esto me permite desarrollar aplicaciones más robustas y
+                      mantenibles.
+                    </p>
+                  </div>
+                  <div class="acordeon">
+                    <div data-primary-letter>
+                      <img src="./app/assets/icons/react-2.svg" alt="react" />
+                      React
+                    </div>
+                    <p>
+                      Dominar el framework React es una de mis fortalezas, y
+                      tengo habilidades en programación basada en componentes.
+                    </p>
+                  </div>
                 </div>
               </article>
-            </template>
-          </div>
-        </section>
-        <section id="technical-skills" data-show data-acordeon>
-          <h2 data-primary-title>Habilidades técnicas</h2>
-          <div class="skills section-content">
-            <article class="technologies">
-              <h3>Tecnologías</h3>
-              <div class="acordeon-container">
-                <div class="acordeon">
-                  <div data-primary-letter>
-                    <img src="./app/assets/icons/icon-html.svg" alt="html" />
-                    HTML
+              <article class="tools">
+                <h3 data-secondary-title>Herramientas</h3>
+                <div>
+                  <div class="acordeon">
+                    <div data-primary-letter>
+                      <img src="./app/assets/icons/icon-git.svg" alt="git" />
+                      Git
+                    </div>
+                    <p>
+                      Tengo un buen entendimiento de Git, lo que me permite
+                      gestionar versiones de proyectos de manera efectiva.
+                    </p>
                   </div>
-                  <p>
-                    Tengo un sólido entendimiento de HTML, lo que me permite
-                    estructurar eficazmente las páginas web.
-                  </p>
-                </div>
-                <div class="acordeon">
-                  <div data-primary-letter>
-                    <img src="./app/assets/icons/icon-css.svg" alt="css" />
-                    CSS
+                  <div class="acordeon">
+                    <div data-primary-letter>
+                      <img
+                        src="./app/assets/icons/icons8-github-60.svg"
+                        alt="github"
+                      />
+                      Github
+                    </div>
+                    <p>
+                      Tengo conocimientos fundamentales de GitHub para colaborar
+                      en proyectos y compartir mi trabajo.
+                    </p>
                   </div>
-                  <p>
-                    Tengo una buena base en CSS, lo que me permite crear estilos
-                    atractivos y responsivos.
-                  </p>
-                </div>
-                <div class="acordeon">
-                  <div data-primary-letter>
-                    <img
-                      src="./app/assets/icons/icon-javascript.svg"
-                      alt="JavaScript"
-                    />
-                    JavaScript
+                  <div class="acordeon">
+                    <div data-primary-letter>
+                      <img
+                        src="./app/assets/icons/icons8-visual-studio-code.svg"
+                        alt="vs code"
+                      />
+                      VsCode
+                    </div>
+                    <p>
+                      Visual Studio Code es mi editor de texto de confianza, que
+                      me permite desarrollar y depurar código de manera
+                      eficiente.
+                    </p>
                   </div>
-                  <p>
-                    Tengo un dominio intermedio en JavaScript y estoy apasionado
-                    por usarlo para crear interactividad en aplicaciones web.
-                  </p>
                 </div>
-                <div class="acordeon">
-                  <div data-primary-letter>
-                    <img
-                      src="./app/assets/icons/icons8-typeScript.svg"
-                      alt="TypeScript"
-                    />
-                    TypeScript
-                  </div>
-                  <p>
-                    Tengo un fuerte entusiasmo por TypeScript, apreciando su
-                    tipado estático y la organización que aporta a mi código.
-                    Esto me permite desarrollar aplicaciones más robustas y
-                    mantenibles.
+              </article>
+            </div>
+          </section>
+          <section id="experiences" data-show>
+            <h2 data-primary-title>Experiencias</h2>
+            <div class="section-content">
+              <p data-primary-letter>
+                He desarrollado múltiples aplicaciones web frontend de manera
+                independiente, especializándome en tecnologías modernas como
+                React, TypeScript, JavaScript, HTML y CSS. Mis habilidades
+                incluyen:
+              </p>
+              <p data-primary-letter>
+                <span
+                  ><b data-secondary-title
+                    >Creación de Interfaces de Usuario:</b
+                  >
+                  Diseño y desarrollo de interfaces atractivas y responsivas que
+                  mejoran la experiencia del usuario.</span
+                >
+              </p>
+              <p data-primary-letter>
+                <b data-secondary-title> Manejo de APIs:</b> Integración de APIs
+                RESTful para la obtención y gestión de datos, asegurando una
+                comunicación efectiva entre el cliente y el servidor.
+              </p>
+
+              <p data-primary-letter>
+                <b data-secondary-title>Formularios Dinámicos:</b>
+                Implementación de formularios interactivos con validaciones en
+                tiempo real, optimizando la recopilación de información.
+              </p>
+              <p data-primary-letter>
+                <b data-secondary-title>Optimización del Rendimiento:</b>
+                Aplicación de técnicas de optimización para garantizar tiempos
+                de carga rápidos y un rendimiento fluido de las aplicaciones.
+              </p>
+              <p data-primary-letter>
+                <b data-secondary-title>Desarrollo Autónomo:</b> He llevado a
+                cabo proyectos completos desde la concepción hasta la
+                implementación, adquiriendo experiencia práctica valiosa en el
+                desarrollo web.
+              </p>
+            </div>
+          </section>
+          <section id="contact-area" data-show>
+            <h2 data-primary-title>Contactame</h2>
+            <div class="contact-me-container section-content">
+              <div class="contact-me">
+                <div class="contact-mail">
+                  <p class="mail" data-primary-letter>
+                    carlosguanipa23@gmail.com
                   </p>
+                  <img
+                    src="./app/assets/icons/icons8-gmail-black.png"
+                    alt="gmail"
+                    class="open-gmail"
+                    title="Mandar Correo"
+                  />
+                  <img
+                    src="./app/assets/icons/icon-copy-black.svg"
+                    alt="copy"
+                    class="copy-mail"
+                    title="Copiar"
+                  />
                 </div>
-                <div class="acordeon">
-                  <div data-primary-letter>
-                    <img src="./app/assets/icons/react-2.svg" alt="react" />
-                    React
-                  </div>
-                  <p>
-                    Dominar el framework React es una de mis fortalezas, y tengo
-                    habilidades en programación basada en componentes.
-                  </p>
-                </div>
-              </div>
-            </article>
-            <article class="tools">
-              <h3>Herramientas</h3>
-              <div>
-                <div class="acordeon">
-                  <div data-primary-letter>
-                    <img src="./app/assets/icons/icon-git.svg" alt="git" />
-                    Git
-                  </div>
-                  <p>
-                    Tengo un buen entendimiento de Git, lo que me permite
-                    gestionar versiones de proyectos de manera efectiva.
-                  </p>
-                </div>
-                <div class="acordeon">
-                  <div data-primary-letter>
-                    <img
+                <div class="contact-area-redes">
+                  <a href="www.linkedin.com/in/carlos-eduardo-guanipa"
+                    ><img
+                      src="./app/assets/icons/icons8-linkedin.svg"
+                      alt="Linkedin"
+                  /></a>
+                  <a href="https://github.com/CarlosE-23"
+                    ><img
                       src="./app/assets/icons/icons8-github-60.svg"
-                      alt="github"
-                    />
-                    Github
-                  </div>
-                  <p>
-                    Tengo conocimientos fundamentales de GitHub para colaborar
-                    en proyectos y compartir mi trabajo.
-                  </p>
-                </div>
-                <div class="acordeon">
-                  <div data-primary-letter>
-                    <img
-                      src="./app/assets/icons/icons8-visual-studio-code.svg"
-                      alt="vs code"
-                    />
-                    VsCode
-                  </div>
-                  <p>
-                    Visual Studio Code es mi editor de texto de confianza, que
-                    me permite desarrollar y depurar código de manera eficiente.
-                  </p>
+                      alt="Github"
+                  /></a>
                 </div>
               </div>
-            </article>
-          </div>
-        </section>
-        <section id="experiences" data-show>
-          <h2 data-primary-title>Experiencias</h2>
-          <div class="section-content">
-            <p data-primary-letter>
-              He desarrollado múltiples aplicaciones web frontend de manera
-              independiente, especializándome en tecnologías modernas como
-              React, TypeScript, JavaScript, HTML y CSS. Mis habilidades
-              incluyen:
-            </p>
-            <p data-primary-letter>
-              <span
-                ><b data-secondary-title>Creación de Interfaces de Usuario:</b>
-                Diseño y desarrollo de interfaces atractivas y responsivas que
-                mejoran la experiencia del usuario.</span
-              >
-            </p>
-            <p data-primary-letter>
-              <b data-secondary-title> Manejo de APIs:</b> Integración de APIs
-              RESTful para la obtención y gestión de datos, asegurando una
-              comunicación efectiva entre el cliente y el servidor.
-            </p>
-
-            <p data-primary-letter>
-              <b data-secondary-title>Formularios Dinámicos:</b> Implementación
-              de formularios interactivos con validaciones en tiempo real,
-              optimizando la recopilación de información.
-            </p>
-            <p data-primary-letter>
-              <b data-secondary-title>Optimización del Rendimiento:</b>
-              Aplicación de técnicas de optimización para garantizar tiempos de
-              carga rápidos y un rendimiento fluido de las aplicaciones.
-            </p>
-            <p data-primary-letter>
-              <b data-secondary-title>Desarrollo Autónomo:</b> He llevado a cabo
-              proyectos completos desde la concepción hasta la implementación,
-              adquiriendo experiencia práctica valiosa en el desarrollo web.
+              <div class="location-container">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4641.306633154258!2d-69.67354223340448!3d11.380336303106745!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e85d5a0e0485a75%3A0x971c2578905a2563!2sInversiones%20mi%20%C3%A1ngel%20amado!5e0!3m2!1ses!2sve!4v1733849389009!5m2!1ses!2sve"
+                  width="600"
+                  height="450"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </section>
+        </main>
+        <footer>
+          <div class="description">
+            <p>
+              <span> Desarrollado por <b>Carlos Guanaipa</b></span
+              >-
+              <span>2024 / Última actualización: 1/12/2024</span>
             </p>
           </div>
-        </section>
-
-        <section id="preparation" data-show>
-          <h2 data-primary-title>Formación</h2>
-          <p data-primary-letter>Null</p>
-        </section>
-      </main>
-      <footer></footer>
+        </footer>
+      </div>
     </div>
     <script src="./app.js" type="module"></script>
   </body>

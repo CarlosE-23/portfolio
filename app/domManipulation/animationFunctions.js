@@ -17,7 +17,7 @@ const hideMain = (btn) => {
     // Después de un retraso, oculta la sección "About Me" y el contenedor principal
     setTimeout(() => {
       $elements.banner.classList.remove(classes.hideBanner);
-      $elements.mainConteiner.classList.remove(classes.showMain);
+      $elements.aplicationMain.classList.remove(classes.showMain);
     }, 1000);
   });
 };
@@ -28,7 +28,7 @@ const showMain = (btn) => {
     // Oculta Banner
     $elements.banner.classList.add(classes.hideBanner);
     // Muestra el contenedor principal
-    $elements.mainConteiner.classList.add(classes.showMain);
+    $elements.aplicationMain.classList.add(classes.showMain);
     // Después de un retraso, muestra los ítems
     setTimeout(() => {
       $elements.itemsToDisplay.forEach((item) =>

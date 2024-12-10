@@ -1,10 +1,20 @@
 :root {
+  /* Colors */
   --background-color: #f8f7f9;
+
   --dark-mode: #111;
+
   --main-color: #48bf84;
   --main-color-2: #48bf8480;
+
   --letter-color: #302f2f;
+  --letter-color-2: #fff;
   --line-color: #11111150;
+
+  --green-message: #48bf8480;
+  --green-message-2: #48bf84ce;
+  --red-message: #ee3a61a9;
+  --red-message-2: #ee3a61a9;
 
   /* icon properties */
   --icon-weight: 900;
@@ -13,10 +23,17 @@
 
   /* size */
 
-  --primary-title-size: 25px;
-  --secondary-title-size: 20px;
+  --header-title-size: clamp(1.1rem, 0.13rem + 1.391vw, 2rem);
+  --banner-title-size: clamp(3rem, -0.232rem + 4.638vw, 6rem);
 
-  --primary-letter-size: 16px;
+  --primary-title-size: clamp(1.6rem, 0.092rem + 2.164vw, 3rem);
+  --secondary-title-size: clamp(1.1rem, -0.193rem + 1.855vw, 2.3rem);
+  --tertiary-title-size: clamp(0.9rem, -0.07rem + 1.391vw, 1.8rem);
+
+  --primary-letter-size: clamp(1rem, 0.138rem + 1.237vw, 1.8rem);
+  --secondary-letter-size: clamp(0.7rem, -0.054rem + 1.082vw, 1.4rem);
+
+  --message-letter-size: clamp(0.6rem, 0.169rem + 0.618vw, 1rem);
 
   --shadow-color: #111;
 }
@@ -56,9 +73,19 @@ li {
   font-size: var(--secondary-title-size);
 }
 
+[data-tertiary-title] {
+  color: #000;
+  font-size: var(--tertiary-title-size);
+}
+
 [data-primary-letter] {
   color: var(--letter-color);
   font-size: var(--primary-letter-size);
+}
+
+[data-secondary-letter] {
+  color: var(--letter-color);
+  font-size: var(--secondary-letter-size);
 }
 
 .green-shadow {
@@ -104,5 +131,13 @@ li {
   100% {
     opacity: 0;
     transform: translateY(40%);
+  }
+}
+
+/* Vista mobil */
+
+@media (max-width: 600px) {
+  [data-primary-title] {
+    text-align: center;
   }
 }
